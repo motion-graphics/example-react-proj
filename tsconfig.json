@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "node",
+        "noImplicitAny": true,
+        "noEmitOnError": false,
+        // "rootDir": "./src/js",
+        // "outDir": "tsDist",
+        "reactNamespace": "React",
+        "sourceMap": true,
+        "module": "commonjs",
+        "target": "es5",
+        "jsx": "react",
+        "watch": true,
+        "experimentalDecorators": true,
+        "declaration": false
+    },
+    "exclude": [
+        "node_modules",
+        "tsDist",
+        "dist"
+    ]
+}
