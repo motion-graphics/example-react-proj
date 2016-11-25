@@ -1,14 +1,28 @@
+var path = require('path');
+var webpack = require('webpack');
+
 module.exports = {
-    entry: './index.jsx',
-    output: {
-        path: './dist',
-        filename: 'index.bundle.js',
+     devServer: {
+        inline: true,
+        contentBase: './',
+        port: 3000
     },
+     plugins: [
+        new webpack.optimize.OccurrenceOrderPlugin()
+    ],
+    devtool: 'cheap-module-eval-source-map',
+    entry: './index.jsx',
+    output: { path: __dirname, filename: 'bundle.js'},
     module: {
-        loaders: [{
-            test: /\.jsx?$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader'
-        }]
-    }
-}
+        loaders: [
+            {
+                test: /.jsx?$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+                query: {
+                    presets: ['es2015', 'react']
+                }
+            }
+        ]
+    },
+};
